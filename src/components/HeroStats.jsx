@@ -23,9 +23,10 @@ const HeroStats = () => {
       className="
       grid
       grid-cols-2
-      lg:grid-cols-4
+      sm:grid-cols-4
       gap-4
-      text-center
+      w-full
+      max-w-xl
       mt-12
     "
     >
@@ -35,29 +36,28 @@ const HeroStats = () => {
           className="
           backdrop-blur-xl
           bg-white/[0.04]
-
           border
           border-white/10
-
-          rounded-3xl
-
-          px-8
-          py-10
-
-          text-center
-
-          hover:-translate-y-2
+          rounded-2xl
+          p-4
+          flex
+          flex-col
+          justify-center
+          items-center
+          aspect-square
+          hover:-translate-y-1.5
           hover:border-[#3DDC84]/40
-
           transition-all
           duration-300
           "
         >
          <h3
             className="
-            text-5xl
+            text-2xl
+            md:text-3xl
             font-black
             text-[#3DDC84]
+            tracking-tight
             "
             >
             {item.value}
@@ -66,9 +66,11 @@ const HeroStats = () => {
           <p
             className="
             text-slate-400
-            mt-4
-            text-sm
+            mt-1
+            text-xs
+            md:text-sm
             tracking-wide
+            font-medium
             "
           >
           {item.title}

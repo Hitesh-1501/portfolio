@@ -26,7 +26,6 @@ const Hero = () => {
       "
       >
       {/* Background */}
-
       <div
        className="
         absolute
@@ -69,16 +68,16 @@ const Hero = () => {
           className="
           grid
           lg:grid-cols-2
-          gap-20 lg:gap-20
+          gap-12 lg:gap-20
           items-center
         "
         >
           {/* Left */}
-
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="flex flex-col loop"
             >
             <p
               className="
@@ -86,25 +85,27 @@ const Hero = () => {
               font-semibold
               tracking-[0.2em]
               text-sm
-              mb-4
+              mb-3
             "
             >
               ANDROID KOTLIN DEVELOPER
             </p>
+            
             <h1
               className="
               text-5xl
               md:text-6xl
               lg:text-7xl
               font-black
-              leading-[1.05]
+              leading-[1.1]
               bg-gradient-to-r
               from-white
               via-slate-100
               to-[#3DDC84]
-
               bg-clip-text
               text-transparent
+              px-2
+              -ml-2
               "
             >
               Hitesh
@@ -117,7 +118,7 @@ const Hero = () => {
               text-lg
               lg:text-xl
               text-slate-400
-              mt-10
+              mt-6
               leading-relaxed
               max-w-xl
               "
@@ -127,13 +128,12 @@ const Hero = () => {
             </p>
 
             {/* Buttons */}
-
             <div
               className="
               flex
               flex-wrap
               gap-4
-              mt-10
+              mt-8
             "
             >
               <a
@@ -142,17 +142,12 @@ const Hero = () => {
                 bg-[#3DDC84]
                 text-black
                 font-semibold
-
                 px-8
                 py-4
-
                 rounded-2xl
-
                 shadow-[0_0_30px_rgba(61,220,132,0.25)]
-
                 hover:scale-105
                 hover:shadow-[0_0_50px_rgba(61,220,132,0.4)]
-
                 transition-all
                 duration-300
                 "
@@ -165,15 +160,11 @@ const Hero = () => {
                className="
                 border
                 border-white/10
-
                 px-8
                 py-4
-
                 rounded-2xl
-
                 hover:border-[#3DDC84]
                 hover:text-[#3DDC84]
-
                 transition-all
                 duration-300
                 "
@@ -183,13 +174,12 @@ const Hero = () => {
             </div>
 
             {/* Social */}
-
             <div
               className="
               flex
               gap-6
               text-3xl
-              mt-10
+              mt-8
               "
             >
               <a
@@ -226,11 +216,11 @@ const Hero = () => {
               </a>
             </div>
 
+            {/* Stats Wrapper Component */}
             <HeroStats />
           </motion.div>
 
           {/* Right */}
-
           <motion.div
               initial={{ opacity: 0, x: 60 }}
               animate={{
@@ -239,12 +229,8 @@ const Hero = () => {
                 y: [-10, 10, -10]
               }}
               transition={{
-                opacity: {
-                  duration: 0.8
-                },
-                x: {
-                  duration: 0.8
-                },
+                opacity: { duration: 0.8 },
+                x: { duration: 0.8 },
                 y: {
                   duration: 6,
                   repeat: Infinity,
@@ -276,7 +262,6 @@ const Hero = () => {
     >
       ↓ Scroll to Explore
     </motion.div>        
-
     </section>
   )
 }
