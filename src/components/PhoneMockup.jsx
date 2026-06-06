@@ -27,8 +27,8 @@ const PhoneMockup = () => {
         border-white/10
         rounded-2xl
 
-        px-4
-        py-2
+        px-5
+        py-3
         text-center
         "
       >
@@ -36,7 +36,7 @@ const PhoneMockup = () => {
           FEATURED PROJECT
         </p>
 
-        <h3 className="font-semibold text-lg">
+        <h3 className="font-bold text-xl">
           AI Expense Tracker
         </h3>
 

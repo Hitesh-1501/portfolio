@@ -28,12 +28,13 @@ const Hero = () => {
       {/* Background */}
 
       <div
-        className="
+       className="
         absolute
         top-0
         left-0
         w-full
         h-full
+        pointer-events-none
       "
       >
         <div
@@ -96,8 +97,7 @@ const Hero = () => {
               md:text-6xl
               lg:text-7xl
               font-black
-              leading-none
-
+              leading-[1.05]
               bg-gradient-to-r
               from-white
               via-slate-100
@@ -161,7 +161,7 @@ const Hero = () => {
               </a>
 
               <a
-                href="#projects"
+              href="#projects"
                className="
                 border
                 border-white/10

@@ -41,8 +41,8 @@ const HeroStats = () => {
 
           rounded-3xl
 
-          px-6
-          py-8
+          px-8
+          py-10
 
           text-center
 
@@ -55,7 +55,7 @@ const HeroStats = () => {
         >
          <h3
             className="
-            text-4xl
+            text-5xl
             font-black
             text-[#3DDC84]
             "
@@ -66,7 +66,7 @@ const HeroStats = () => {
           <p
             className="
             text-slate-400
-            mt-2
+            mt-4
             text-sm
             tracking-wide
             "

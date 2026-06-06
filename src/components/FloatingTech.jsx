@@ -9,17 +9,23 @@ const techs = [
   {
     icon: <SiAndroid />,
     label: "Android",
-    position: "top-20 -right-16",
+    position: "top-20 -right-20",
+    color: "text-[#3DDC84]",
+    border: "border-[#3DDC84]/30",
   },
   {
     icon: <SiKotlin />,
     label: "Kotlin",
-    position: "top-40 -left-20",
+    position: "top-44 -left-24",
+    color: "text-[#7F52FF]",
+    border: "border-[#7F52FF]/30",
   },
   {
     icon: <SiFirebase />,
     label: "Firebase",
-    position: "bottom-40 -left-16",
+    position: "bottom-40 -left-24",
+    color: "text-[#FFCA28]",
+    border: "border-[#FFCA28]/30",
   },
 ];
 
@@ -56,11 +62,15 @@ const FloatingTech = () => {
             backdrop-blur-xl
             bg-white/[0.05]
             border
-            border-white/10
+            ${tech.border}
           "
           >
-            {tech.icon}
-            <span>{tech.label}</span>
+            <div className={tech.color}>
+              {tech.icon}
+            </div>
+            <span className={tech.color}>
+              {tech.label}
+            </span>
           </div>
         </motion.div>
       ))}
