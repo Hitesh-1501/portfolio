@@ -1,4 +1,5 @@
 import analytics from "../assets/images/analytics.png"
+import FloatingTech from "./FloatingTech";
 
 const PhoneMockup = () => {
   return (
@@ -50,10 +51,12 @@ const PhoneMockup = () => {
         absolute
         inset-0
         bg-[#3DDC84]
-        blur-[120px]
-        opacity-20
+        blur-[150px]
+        opacity-30
         "
       />
+
+      <FloatingTech />
 
       {/* Phone */}
       <div

@@ -25,6 +25,7 @@ const HeroStats = () => {
       grid-cols-2
       lg:grid-cols-4
       gap-4
+      text-center
       mt-12
     "
     >
@@ -40,7 +41,10 @@ const HeroStats = () => {
 
           rounded-3xl
 
-          p-6
+          px-6
+          py-8
+
+          text-center
 
           hover:-translate-y-2
           hover:border-[#3DDC84]/40
@@ -59,8 +63,15 @@ const HeroStats = () => {
             {item.value}
           </h3>
 
-          <p className="text-slate-400">
-            {item.title}
+          <p
+            className="
+            text-slate-400
+            mt-2
+            text-sm
+            tracking-wide
+            "
+          >
+          {item.title}
           </p>
         </div>
       ))}

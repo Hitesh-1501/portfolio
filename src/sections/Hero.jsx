@@ -68,33 +68,17 @@ const Hero = () => {
           className="
           grid
           lg:grid-cols-2
-          gap-20
+          gap-20 lg:gap-20
           items-center
         "
         >
           {/* Left */}
 
-          <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                y: [-10, 10, -10]
-              }}
-              transition={{
-                opacity: {
-                  duration: 0.8
-                },
-                x: {
-                  duration: 0.8
-                },
-                y: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-          >
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
             <p
               className="
               text-[#3DDC84]
@@ -248,14 +232,51 @@ const Hero = () => {
           {/* Right */}
 
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+              initial={{ opacity: 0, x: 60 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                y: [-10, 10, -10]
+              }}
+              transition={{
+                opacity: {
+                  duration: 0.8
+                },
+                x: {
+                  duration: 0.8
+                },
+                y: {
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+            >
             <PhoneMockup />
           </motion.div>
         </div>
       </Container>
+
+      <motion.div
+      animate={{
+        y: [0, 10, 0]
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity
+      }}
+      className="
+      absolute
+      bottom-8
+      left-1/2
+      -translate-x-1/2
+      text-slate-500
+      text-sm
+      "
+    >
+      ↓ Scroll to Explore
+    </motion.div>        
+
     </section>
   )
 }

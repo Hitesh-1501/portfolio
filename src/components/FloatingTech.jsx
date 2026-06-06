@@ -1,71 +1,71 @@
+import { motion } from "framer-motion";
+import {
+  SiAndroid,
+  SiKotlin,
+  SiFirebase,
+} from "react-icons/si";
+
+const techs = [
+  {
+    icon: <SiAndroid />,
+    label: "Android",
+    position: "top-20 -right-16",
+  },
+  {
+    icon: <SiKotlin />,
+    label: "Kotlin",
+    position: "top-40 -left-20",
+  },
+  {
+    icon: <SiFirebase />,
+    label: "Firebase",
+    position: "bottom-40 -left-16",
+  },
+];
+
 const FloatingTech = () => {
   return (
     <>
-      <div
-        className="
-          absolute
-          -top-4
-          -left-8
-          bg-slate-900
-          border
-          border-green-500/20
-          px-4
-          py-2
-          rounded-xl
-        "
-      >
-        Kotlin
-      </div>
+      {techs.map((tech, index) => (
+        <motion.div
+          key={tech.label}
+          animate={{
+            y: [-10, 10, -10],
+          }}
+          transition={{
+            duration: 4 + index,
+            repeat: Infinity,
+          }}
+          className={`
+            absolute
+            ${tech.position}
+            z-20
+          `}
+        >
+          <div
+            className="
+            flex
+            items-center
+            gap-2
 
-      <div
-        className="
-          absolute
-          top-10
-          -right-10
-          bg-slate-900
-          border
-          border-green-500/20
-          px-4
-          py-2
-          rounded-xl
-        "
-      >
-        Android
-      </div>
+            px-4
+            py-2
 
-      <div
-        className="
-          absolute
-          bottom-8
-          -left-10
-          bg-slate-900
-          border
-          border-green-500/20
-          px-4
-          py-2
-          rounded-xl
-        "
-      >
-        Firebase
-      </div>
+            rounded-full
 
-      <div
-        className="
-          absolute
-          bottom-0
-          -right-8
-          bg-slate-900
-          border
-          border-green-500/20
-          px-4
-          py-2
-          rounded-xl
-        "
-      >
-        Compose
-      </div>
+            backdrop-blur-xl
+            bg-white/[0.05]
+            border
+            border-white/10
+          "
+          >
+            {tech.icon}
+            <span>{tech.label}</span>
+          </div>
+        </motion.div>
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default FloatingTech
+export default FloatingTech;

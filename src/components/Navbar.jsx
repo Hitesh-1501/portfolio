@@ -31,11 +31,56 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:flex gap-10 text-slate-300">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#achievements">Achievements</a>
-          <a href="#contact">Contact</a>
+         <a
+            href="#about"
+            className="
+            hover:text-[#3DDC84]
+            transition-colors
+            duration-300
+            "
+          >
+            About
+          </a>
+          <a
+            href="#skills"
+            className="
+            hover:text-[#3DDC84]
+            transition-colors
+            duration-300
+            "
+          >
+            Skills
+          </a>
+          <a
+            href="#projects"
+            className="
+            hover:text-[#3DDC84]
+            transition-colors
+            duration-300
+            "
+          >
+            Projects
+          </a>
+          <a
+            href="#achievements"
+            className="
+            hover:text-[#3DDC84]
+            transition-colors
+            duration-300
+            "
+          >
+            Achievements
+          </a>
+          <a
+            href="#contact"
+            className="
+            hover:text-[#3DDC84]
+            transition-colors
+            duration-300
+            "
+          >
+            Contact
+          </a>
         </div>
       </div>
     </motion.nav>
