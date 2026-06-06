@@ -11,6 +11,7 @@ import { SiLeetcode } from "react-icons/si"
 import Container from "../components/Container"
 import HeroStats from "../components/HeroStats"
 import PhoneMockup from "../components/PhoneMockup"
+import ProfilePhoto from "../components/ProfilePhoto" // <-- Imported Here
 
 import { personalInfo } from "../data/portfolioData"
 
@@ -73,7 +74,7 @@ const Hero = () => {
           items-center
         "
         >
-          {/* Left */}
+          {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
@@ -81,6 +82,9 @@ const Hero = () => {
               className="flex flex-col loop"
             >
             
+            {/* PROFILE PHOTO INSERTED HERE: Clean layout integration */}
+            <ProfilePhoto />
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,6 +95,7 @@ const Hero = () => {
               tracking-[0.35em]
               text-sm
               font-semibold
+              mt-6
               "
             >
               Welcome To My Portfolio
@@ -102,12 +107,10 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="
-              mt-6
-
+              mt-4
               text-5xl
               md:text-6xl
               lg:text-7xl
-
               font-black
               leading-[1.1]
               "
@@ -131,9 +134,22 @@ const Hero = () => {
                 Hitesh Badgujar
               </span>
             </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="
+              mt-6
+              text-2xl
+              md:text-3xl
+              font-semibold
+              text-slate-300
+              "
+            >
             <TypeAnimation
               sequence={[
-                "Android== Developer",
+                "Android Developer",
                 1500,
                 "Jetpack Compose Developer",
                 1500,
@@ -151,6 +167,9 @@ const Hero = () => {
               text-slate-300
               "
             />
+             
+            </motion.h2>
+
             <p
              className="
               text-lg
@@ -225,22 +244,16 @@ const Hero = () => {
                 className="
                 w-12
                 h-12
-
                 rounded-full
-
                 bg-white/[0.04]
                 border
                 border-white/10
-
                 flex
                 items-center
                 justify-center
-
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
-
                 hover:-translate-y-1
-
                 transition-all
                 duration-300
                 "
@@ -252,22 +265,16 @@ const Hero = () => {
                className="
                 w-12
                 h-12
-
                 rounded-full
-
                 bg-white/[0.04]
                 border
                 border-white/10
-
                 flex
                 items-center
                 justify-center
-
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
-
                 hover:-translate-y-1
-
                 transition-all
                 duration-300
                 "
@@ -279,23 +286,17 @@ const Hero = () => {
                 className="
                 w-12
                 h-12
-
                 rounded-full
-
                 bg-white/[0.04]
                 border
                 border-white/10
-
                 flex
                 items-center
                 justify-center
-
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
-
                 hover:-translate-y-1
-
-                transition-all
+                transition-all[cite: 3, 6]
                 duration-300
                 "
               >
@@ -307,7 +308,7 @@ const Hero = () => {
             <HeroStats />
           </motion.div>
 
-          {/* Right */}
+          {/* Right Column */}
           <motion.div
               initial={{ opacity: 0, x: 60 }}
               animate={{

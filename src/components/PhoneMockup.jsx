@@ -1,6 +1,5 @@
 import analytics from "../assets/images/analytics.png"
 import FloatingTech from "./FloatingTech";
-import ProfilePhoto from "./ProfilePhoto";
 
 const PhoneMockup = () => {
   return (
@@ -9,13 +8,22 @@ const PhoneMockup = () => {
       relative
       w-[260px]
       lg:w-[300px]
-
       mx-auto
-
-      rotate-[-4deg]
+      
+      /* Base tilted position */
+      rotate-[-4deg] 
+      
+      /* Smoothly resets to normal upright position on hover */
+      hover:rotate-0 
+      hover:scale-[1.03] 
+      
+      transition-all
+      duration-500
+      ease-out
+      cursor-pointer
+      z-10
       "
     >
-      <ProfilePhoto />
       {/* Featured Project Card */}
       <div
         className="
@@ -30,8 +38,8 @@ const PhoneMockup = () => {
         border
         border-white/10
         rounded-2xl
-        w - [250px]
-        p- 5
+        w-[250px]
+        p-5
         text-center
         "
       >
@@ -69,7 +77,7 @@ const PhoneMockup = () => {
         </p>
       </div>
 
-      {/* Glow */}
+      {/* Glow Backdrop */}
       <div
         className="
         absolute
@@ -77,32 +85,22 @@ const PhoneMockup = () => {
         bg-[#3DDC84]
         blur-[150px]
         opacity-30
+        pointer-events-none
         "
       />
 
       <FloatingTech />
 
-      {/* Phone */}
+      {/* Phone Shell Container */}
       <div
           className="
           relative
-
           rounded-[40px]
-
           border
           border-white/10
-
           bg-black
-
           p-3
-
           shadow-[0_40px_120px_rgba(0,0,0,0.6)]
-
-          hover:rotate-0
-          hover:scale-105
-
-          transition-all
-          duration-500
           "
         >
         <img
