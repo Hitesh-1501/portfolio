@@ -16,14 +16,15 @@ import { personalInfo } from "../data/portfolioData"
 const Hero = () => {
   return (
     <section
-      className="
-      min-h-screen
-      relative
-      overflow-hidden
-      flex
-      items-center
-    "
-    >
+        className="
+        min-h-screen
+        relative
+        overflow-hidden
+        flex
+        items-center
+        pt-34
+      "
+      >
       {/* Background */}
 
       <div
@@ -78,24 +79,30 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span
+
+            <p className="text-slate-400 mb-4">
+                👋 Hi, I'm
+              </p>  
+              
+            <p
               className="
               text-[#3DDC84]
               font-semibold
-              tracking-widest
+              tracking-[0.2em]
+              text-sm
+              mb-4
             "
             >
               ANDROID KOTLIN DEVELOPER
-            </span>
-
+            </p>
             <h1
               className="
-              text-6xl
-              lg:text-7xl
+              text-5xl
+              lg:text-6xl
               font-black
               mt-4
               leading-tight
-            "
+              "
             >
               Hitesh
               <br />

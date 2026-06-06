@@ -8,7 +8,7 @@ const Navbar = () => {
       transition={{ duration: 0.7 }}
       className="
         fixed
-        top-4
+        top-6
         left-1/2
         -translate-x-1/2
         z-50
@@ -22,7 +22,7 @@ const Navbar = () => {
           bg-white/[0.03]
           border border-white/10
           rounded-3xl
-          px-8 py-5
+          px-8 py-3
           flex items-center justify-between
         "
       >

@@ -5,7 +5,6 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from "./components/Navbar"
 import Hero from "./sections/Hero"
-import QuickStats from "./components/QuickStats"
 
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <QuickStats />
     </>
   )
 }
