@@ -5,27 +5,25 @@ const ProfilePhoto = () => {
   return (
     <motion.div
       animate={{
-        y: [-4, 4, -4],
+        y: [-6, 6, -6],
       }}
       transition={{
         duration: 4,
         repeat: Infinity,
         ease: "easeInOut"
       }}
-      className="mb-2 self-start"
+      className="relative block"
     >
       <div
         className="
         relative
-        w-24
-        h-24
-        sm:w-28
-        sm:h-28
+        w-28
+        h-28
         rounded-full
         overflow-hidden
         border-4
         border-[#3DDC84]
-        shadow-[0_0_40px_rgba(61,220,132,0.25)]
+        shadow-[0_0_40px_rgba(61,220,132,0.3)]
         "
       >
         <img
@@ -42,4 +40,4 @@ const ProfilePhoto = () => {
   );
 };
 
-export default ProfilePhoto;
+export default ProfilePhoto

@@ -12,20 +12,24 @@ const techs = [
     position: "top-20 -right-20",
     color: "text-[#3DDC84]",
     border: "border-[#3DDC84]/30",
+    shadowColor: "rgba(61,220,132,"
   },
   {
     icon: <SiKotlin />,
     label: "Kotlin",
-    position: "top-44 -left-24",
+    // Repositioned to the right side to prevent clipping behind the Profile Photo
+    position: "top-52 -right-24", 
     color: "text-[#7F52FF]",
     border: "border-[#7F52FF]/30",
+    shadowColor: "rgba(127,82,255,"
   },
   {
     icon: <SiFirebase />,
     label: "Firebase",
-    position: "bottom-40 -left-24",
+    position: "bottom-36 -left-20",
     color: "text-[#FFCA28]",
     border: "border-[#FFCA28]/30",
+    shadowColor: "rgba(255,202,40,"
   },
 ];
 
@@ -38,16 +42,24 @@ const FloatingTech = () => {
           animate={{
             y: [-10, 10, -10],
             rotate: [-4, 4, -4],
-            scale: [1, 1.05, 1]
+            // Upgrade Floating Pills Animations
+            scale: [1, 1.08, 1],
+            boxShadow: [
+              `0 0 0px ${tech.shadowColor}0)`,
+              `0 0 20px ${tech.shadowColor}0.25)`,
+              `0 0 0px ${tech.shadowColor}0)`
+            ]
           }}
           transition={{
             duration: 4 + index,
             repeat: Infinity,
+            ease: "easeInOut"
           }}
           className={`
             absolute
             ${tech.position}
             z-20
+            rounded-full
           `}
         >
           <div
@@ -62,7 +74,7 @@ const FloatingTech = () => {
             rounded-full
 
             backdrop-blur-xl
-            bg-white/[0.05]
+            bg-black/60
             border
             ${tech.border}
           "
@@ -70,7 +82,7 @@ const FloatingTech = () => {
             <div className={tech.color}>
               {tech.icon}
             </div>
-            <span className={tech.color}>
+            <span className={`text-sm font-medium ${tech.color}`}>
               {tech.label}
             </span>
           </div>

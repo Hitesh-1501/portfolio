@@ -1,5 +1,7 @@
 import analytics from "../assets/images/analytics.png"
 import FloatingTech from "./FloatingTech";
+import ProfilePhoto from "./ProfilePhoto";
+import { SiAndroid } from "react-icons/si";
 
 const PhoneMockup = () => {
   return (
@@ -11,11 +13,11 @@ const PhoneMockup = () => {
       mx-auto
       
       /* Base tilted position */
-      rotate-[-4deg] 
+      rotate-[-4deg]
       
       /* Smoothly resets to normal upright position on hover */
-      hover:rotate-0 
-      hover:scale-[1.03] 
+      hover:rotate-0
+      hover:scale-[1.03]
       
       transition-all
       duration-500
@@ -24,6 +26,17 @@ const PhoneMockup = () => {
       z-10
       "
     >
+      {/* Profile Photo Wrapper Container */}
+      <div className="absolute -left-14 top-28 z-30 group/avatar">
+        {/* Step 2: Android Developer Badge above the photo */}
+        <div className="absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0b0f19]/90 border border-[#3DDC84]/40 text-[#3DDC84] text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md pointer-events-none transition-transform duration-300 group-hover/avatar:-translate-y-1">
+          <SiAndroid className="text-xs" />
+          <span>ANDROID DEVELOPER</span>
+        </div>
+        {/* Step 1: Profile Photo embedded inside Phone Area */}
+        <ProfilePhoto />
+      </div>
+
       {/* Featured Project Card */}
       <div
         className="

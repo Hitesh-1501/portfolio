@@ -11,7 +11,6 @@ import { SiLeetcode } from "react-icons/si"
 import Container from "../components/Container"
 import HeroStats from "../components/HeroStats"
 import PhoneMockup from "../components/PhoneMockup"
-import ProfilePhoto from "../components/ProfilePhoto" // <-- Imported Here
 
 import { personalInfo } from "../data/portfolioData"
 
@@ -27,7 +26,7 @@ const Hero = () => {
         pt-34
       "
       >
-      {/* Background */}
+      {/* Background Grid Globs */}
       <div
        className="
         absolute
@@ -74,7 +73,7 @@ const Hero = () => {
           items-center
         "
         >
-          {/* Left Column */}
+          {/* Left Column Text details */}
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
@@ -82,9 +81,6 @@ const Hero = () => {
               className="flex flex-col loop"
             >
             
-            {/* PROFILE PHOTO INSERTED HERE: Clean layout integration */}
-            <ProfilePhoto />
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,22 +91,22 @@ const Hero = () => {
               tracking-[0.35em]
               text-sm
               font-semibold
-              mt-6
               "
             >
               Welcome To My Portfolio
             </motion.p>
-
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="
-              mt-4
+              mt-6
+
               text-5xl
               md:text-6xl
               lg:text-7xl
+
               font-black
               leading-[1.1]
               "
@@ -141,8 +137,10 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="
               mt-6
+
               text-2xl
               md:text-3xl
+
               font-semibold
               text-slate-300
               "
@@ -167,9 +165,9 @@ const Hero = () => {
               text-slate-300
               "
             />
-             
             </motion.h2>
 
+            {/* Step 5: Premium Description Variant */}
             <p
              className="
               text-lg
@@ -180,11 +178,10 @@ const Hero = () => {
               max-w-xl
               "
             >
-              Building modern Android applications with Kotlin,
-              Jetpack Compose, Firebase and AI-powered experiences.
+              Final-year Computer Science student specializing in Android development, Jetpack Compose, Firebase, and AI-powered mobile applications.
             </p>
 
-            {/* Buttons */}
+            {/* Buttons UI actions */}
             <div
               className="
               flex
@@ -230,7 +227,7 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Social */}
+            {/* Social Anchor Nodes */}
             <div
               className="
               flex
@@ -244,16 +241,22 @@ const Hero = () => {
                 className="
                 w-12
                 h-12
+
                 rounded-full
+
                 bg-white/[0.04]
                 border
                 border-white/10
+
                 flex
                 items-center
                 justify-center
+
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
+
                 transition-all
                 duration-300
                 "
@@ -265,16 +268,22 @@ const Hero = () => {
                className="
                 w-12
                 h-12
+
                 rounded-full
+
                 bg-white/[0.04]
                 border
                 border-white/10
+
                 flex
                 items-center
                 justify-center
+
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
+
                 transition-all
                 duration-300
                 "
@@ -286,17 +295,23 @@ const Hero = () => {
                 className="
                 w-12
                 h-12
+
                 rounded-full
+
                 bg-white/[0.04]
                 border
                 border-white/10
+
                 flex
                 items-center
                 justify-center
+
                 hover:border-[#3DDC84]
                 hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
-                transition-all[cite: 3, 6]
+
+                transition-all[cite: 3, 6, 9]
                 duration-300
                 "
               >
@@ -304,11 +319,11 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Stats Wrapper Component */}
+            {/* Metrics Counters */}
             <HeroStats />
           </motion.div>
 
-          {/* Right Column */}
+          {/* Right Column Phone presentation wrapper layout */}
           <motion.div
               initial={{ opacity: 0, x: 60 }}
               animate={{
@@ -331,25 +346,26 @@ const Hero = () => {
         </div>
       </Container>
 
-      <motion.div
-      animate={{
-        y: [0, 10, 0]
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity
-      }}
-      className="
-      absolute
-      bottom-8
-      left-1/2
-      -translate-x-1/2
-      text-slate-500
-      text-sm
-      "
-    >
-      ↓ Scroll to Explore
-    </motion.div>        
+      {/* Step 3: Premium Mouse Outline Scroll Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 pointer-events-none">
+        <span className="text-[10px] tracking-[0.25em] text-slate-500 font-bold uppercase">
+          SCROLL
+        </span>
+        <div className="w-[20px] h-[32px] border-2 border-slate-600 rounded-full flex justify-center p-1">
+          <motion.div 
+            animate={{
+              y: [0, 10, 0],
+              opacity: [1, 0.2, 1]
+            }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="w-1 h-2 bg-[#3DDC84] rounded-full"
+          />
+        </div>
+      </div>      
     </section>
   )
 }
