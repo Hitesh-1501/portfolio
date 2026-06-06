@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+:root {
+  --bg-primary: #0b1120;
+  --bg-secondary: #111827;
+  --card-bg: #1e293b;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  --android-green: #3ddc84;
+  --accent-blue: #38bdf8;
+
+  font-family: "Inter", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,4 +22,21 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
