@@ -10,6 +10,7 @@ import Container from "../components/Container"
 import { personalInfo } from "../data/portfolioData"
 
 import profileImage from "../assets/images/hitesh_photo.png"
+import FloatingTech from "../components/FloatingTech"
 
 const Hero = () => {
   return (
@@ -198,6 +199,8 @@ const Hero = () => {
                 blur-3xl
               "
               />
+              
+              <FloatingTech />
 
               <img
                 src={profileImage}
