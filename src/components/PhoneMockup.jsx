@@ -6,9 +6,12 @@ const PhoneMockup = () => {
     <div
       className="
       relative
-      w-[250px]
-      lg:w-[270px]
+      w-[260px]
+      lg:w-[300px]
+
       mx-auto
+
+      rotate-[-4deg]
       "
     >
 
@@ -26,21 +29,41 @@ const PhoneMockup = () => {
         border
         border-white/10
         rounded-2xl
-
-        px-5
-        py-3
+        w - [250px]
+        p- 5
         text-center
         "
       >
-        <p className="text-xs text-slate-400">
+        <p className="text-xs uppercase tracking-widest text-slate-400">
           FEATURED PROJECT
         </p>
-
-        <h3 className="font-bold text-xl">
+        <h3
+          className="
+          text-2xl
+          font-bold
+          mt-2
+          "
+        >
           AI Expense Tracker
         </h3>
 
-        <p className="text-xs text-[#3DDC84]">
+        <p
+          className="
+          text-sm
+          text-slate-400
+          mt-2
+          "
+        >
+          AI Powered Personal Finance App
+        </p>
+
+        <p
+          className="
+          text-xs
+          text-[#3DDC84]
+          mt-3
+          "
+        >
           Gemini AI • Firebase • Compose
         </p>
       </div>
@@ -60,16 +83,27 @@ const PhoneMockup = () => {
 
       {/* Phone */}
       <div
-        className="
-        relative
-        rounded-[40px]
-        border
-        border-white/10
-        bg-black
-        p-3
-        shadow-2xl
-        "
-      >
+          className="
+          relative
+
+          rounded-[40px]
+
+          border
+          border-white/10
+
+          bg-black
+
+          p-3
+
+          shadow-[0_40px_120px_rgba(0,0,0,0.6)]
+
+          hover:rotate-0
+          hover:scale-105
+
+          transition-all
+          duration-500
+          "
+        >
         <img
           src={analytics}
           alt="AI Expense Tracker"

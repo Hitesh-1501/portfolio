@@ -220,18 +220,51 @@ const Hero = () => {
               <a
                 href={personalInfo.github}
                 className="
-                hover:text-[#3DDC84]
+                w-12
+                h-12
+
+                rounded-full
+
+                bg-white/[0.04]
+                border
+                border-white/10
+
+                flex
+                items-center
+                justify-center
+
+                hover:border-[#3DDC84]
+                hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
+
                 transition-all
                 duration-300
-                "> 
+                "
+                > 
                 <FaGithub />
               </a>
 
               <a href={personalInfo.linkedin}
                className="
-                hover:text-[#3DDC84]
+                w-12
+                h-12
+
+                rounded-full
+
+                bg-white/[0.04]
+                border
+                border-white/10
+
+                flex
+                items-center
+                justify-center
+
+                hover:border-[#3DDC84]
+                hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
+
                 transition-all
                 duration-300
                 "
@@ -241,8 +274,24 @@ const Hero = () => {
 
               <a href={personalInfo.leetcode}
                 className="
-                hover:text-[#3DDC84]
+                w-12
+                h-12
+
+                rounded-full
+
+                bg-white/[0.04]
+                border
+                border-white/10
+
+                flex
+                items-center
+                justify-center
+
+                hover:border-[#3DDC84]
+                hover:bg-[#3DDC84]/10
+
                 hover:-translate-y-1
+
                 transition-all
                 duration-300
                 "
