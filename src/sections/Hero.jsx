@@ -79,39 +79,74 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="flex flex-col loop"
             >
-            <p
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
               className="
               text-[#3DDC84]
-              font-semibold
-              tracking-[0.2em]
+              uppercase
+              tracking-[0.35em]
               text-sm
-              mb-3
-            "
+              font-semibold
+              "
             >
-              ANDROID KOTLIN DEVELOPER
-            </p>
-            
-            <h1
+              Welcome To My Portfolio
+            </motion.p>
+
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
               className="
+              mt-6
+
               text-5xl
               md:text-6xl
               lg:text-7xl
+
               font-black
               leading-[1.1]
-              bg-gradient-to-r
-              from-white
-              via-slate-100
-              to-[#3DDC84]
-              bg-clip-text
-              text-transparent
-              px-2
-              -ml-2
               "
             >
-              Hitesh
+              <span className="text-slate-400">
+                I'm
+              </span>
+
               <br />
-              Badgujar
-            </h1>
+
+              <span
+                className="
+                bg-gradient-to-r
+                from-white
+                via-white
+                to-[#3DDC84]
+                bg-clip-text
+                text-transparent
+                "
+              >
+                Hitesh Badgujar
+              </span>
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="
+              mt-6
+
+              text-2xl
+              md:text-3xl
+
+              font-semibold
+              text-slate-300
+              "
+            >
+              Android Kotlin Developer
+            </motion.h2>
 
             <p
              className="
