@@ -33,14 +33,29 @@ const HeroStats = () => {
           key={item.title}
           className="
           backdrop-blur-xl
-          bg-white/[0.03]
+          bg-white/[0.04]
+
           border
           border-white/10
-          rounded-2xl
-          p-5
-        "
+
+          rounded-3xl
+
+          p-6
+
+          hover:-translate-y-2
+          hover:border-[#3DDC84]/40
+
+          transition-all
+          duration-300
+          "
         >
-          <h3 className="text-3xl font-bold text-[#3DDC84]">
+         <h3
+            className="
+            text-4xl
+            font-black
+            text-[#3DDC84]
+            "
+            >
             {item.value}
           </h3>
 
