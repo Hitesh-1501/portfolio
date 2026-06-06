@@ -37,6 +37,8 @@ const FloatingTech = () => {
           key={tech.label}
           animate={{
             y: [-10, 10, -10],
+            rotate: [-4, 4, -4],
+            scale: [1, 1.05, 1]
           }}
           transition={{
             duration: 4 + index,

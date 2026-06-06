@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { TypeAnimation } from "react-type-animation";
 
 import {
   FaGithub,
@@ -130,24 +131,26 @@ const Hero = () => {
                 Hitesh Badgujar
               </span>
             </motion.h1>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+            <TypeAnimation
+              sequence={[
+                "Android== Developer",
+                1500,
+                "Jetpack Compose Developer",
+                1500,
+                "Firebase Developer",
+                1500,
+                "Kotlin Developer",
+                1500,
+              ]}
+              wrapper="span"
+              repeat={Infinity}
               className="
-              mt-6
-
               text-2xl
               md:text-3xl
-
               font-semibold
               text-slate-300
               "
-            >
-              Android Kotlin Developer
-            </motion.h2>
-
+            />
             <p
              className="
               text-lg

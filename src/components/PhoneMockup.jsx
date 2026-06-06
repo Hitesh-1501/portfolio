@@ -1,5 +1,6 @@
 import analytics from "../assets/images/analytics.png"
 import FloatingTech from "./FloatingTech";
+import ProfilePhoto from "./ProfilePhoto";
 
 const PhoneMockup = () => {
   return (
@@ -14,7 +15,7 @@ const PhoneMockup = () => {
       rotate-[-4deg]
       "
     >
-
+      <ProfilePhoto />
       {/* Featured Project Card */}
       <div
         className="
