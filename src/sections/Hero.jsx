@@ -1,103 +1,117 @@
 import { motion } from "framer-motion"
+
 import {
   FaGithub,
-  FaLinkedin,
+  FaLinkedin
 } from "react-icons/fa"
 
 import { SiLeetcode } from "react-icons/si"
 
 import Container from "../components/Container"
-import { personalInfo } from "../data/portfolioData"
+import HeroStats from "../components/HeroStats"
+import PhoneMockup from "../components/PhoneMockup"
 
-import profileImage from "../assets/images/hitesh_photo.png"
-import FloatingTech from "../components/FloatingTech"
+import { personalInfo } from "../data/portfolioData"
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center">
+    <section
+      className="
+      min-h-screen
+      relative
+      overflow-hidden
+      flex
+      items-center
+    "
+    >
+      {/* Background */}
 
-      {/* Background Blob 1 */}
       <div
         className="
         absolute
-        top-20
-        left-20
-        w-72
-        h-72
-        rounded-full
-        bg-green-500/10
-        blur-3xl
+        top-0
+        left-0
+        w-full
+        h-full
       "
-      />
+      >
+        <div
+          className="
+          absolute
+          top-20
+          left-20
+          w-[500px]
+          h-[500px]
+          bg-[#3DDC84]
+          opacity-10
+          blur-[180px]
+        "
+        />
 
-      {/* Background Blob 2 */}
-      <div
-        className="
-        absolute
-        bottom-20
-        right-20
-        w-72
-        h-72
-        rounded-full
-        bg-sky-500/10
-        blur-3xl
-      "
-      />
+        <div
+          className="
+          absolute
+          bottom-20
+          right-20
+          w-[500px]
+          h-[500px]
+          bg-cyan-500
+          opacity-10
+          blur-[180px]
+        "
+        />
+      </div>
 
       <Container>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-          {/* Left Side */}
+        <div
+          className="
+          grid
+          lg:grid-cols-2
+          gap-20
+          items-center
+        "
+        >
+          {/* Left */}
 
           <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-
-            <p
+            <span
               className="
-              text-green-400
-              font-medium
-              mb-4
+              text-[#3DDC84]
+              font-semibold
+              tracking-widest
             "
             >
-              Android Developer
-            </p>
+              ANDROID KOTLIN DEVELOPER
+            </span>
 
             <h1
               className="
-              text-5xl
+              text-6xl
               lg:text-7xl
-              font-bold
+              font-black
+              mt-4
               leading-tight
             "
             >
-              {personalInfo.name}
+              Hitesh
+              <br />
+              Badgujar
             </h1>
-
-            <h2
-              className="
-              text-slate-400
-              text-xl
-              lg:text-2xl
-              mt-4
-            "
-            >
-              {personalInfo.title}
-            </h2>
 
             <p
               className="
-              text-slate-300
-              mt-6
-              text-lg
-              leading-relaxed
+              text-xl
+              text-slate-400
+              mt-8
               max-w-xl
             "
             >
-              {personalInfo.tagline}
+              Building modern Android applications with Kotlin,
+              Jetpack Compose, Firebase and AI-powered experiences.
             </p>
 
             {/* Buttons */}
@@ -107,55 +121,45 @@ const Hero = () => {
               flex
               flex-wrap
               gap-4
-              mt-8
+              mt-10
             "
             >
-
               <a
                 href="/hitesh_resume.pdf"
-                target="_blank"
                 className="
-                px-6
-                py-3
-                rounded-xl
-                bg-green-500
+                bg-[#3DDC84]
                 text-black
                 font-semibold
-                hover:scale-105
-                transition
+                px-8 py-4
+                rounded-2xl
               "
               >
-                Download Resume
+                Resume
               </a>
 
               <a
                 href="#projects"
                 className="
-                px-6
-                py-3
-                rounded-xl
                 border
-                border-slate-700
-                hover:bg-slate-800
-                transition
+                border-white/10
+                px-8 py-4
+                rounded-2xl
               "
               >
-                View Projects
+                Projects
               </a>
-
             </div>
 
-            {/* Socials */}
+            {/* Social */}
 
             <div
               className="
               flex
               gap-6
-              mt-8
               text-2xl
+              mt-10
             "
             >
-
               <a href={personalInfo.github}>
                 <FaGithub />
               </a>
@@ -167,61 +171,21 @@ const Hero = () => {
               <a href={personalInfo.leetcode}>
                 <SiLeetcode />
               </a>
-
             </div>
 
+            <HeroStats />
           </motion.div>
 
-          {/* Right Side */}
+          {/* Right */}
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="
-            flex
-            justify-center
-          "
           >
-
-            <div
-              className="
-              relative
-            "
-            >
-
-              <div
-                className="
-                absolute
-                inset-0
-                rounded-full
-                bg-green-500/20
-                blur-3xl
-              "
-              />
-              
-              <FloatingTech />
-
-              <img
-                src={profileImage}
-                alt="Hitesh"
-                className="
-                relative
-                w-80
-                h-80
-                object-cover
-                rounded-full
-                border-4
-                border-green-400
-              "
-              />
-
-            </div>
-
+            <PhoneMockup />
           </motion.div>
-
         </div>
-
       </Container>
     </section>
   )

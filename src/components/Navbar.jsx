@@ -1,11 +1,11 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
     <motion.nav
-      initial={{ y: -80 }}
+      initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.7 }}
       className="
         fixed
         top-4
@@ -13,41 +13,24 @@ const Navbar = () => {
         -translate-x-1/2
         z-50
         w-[95%]
-        max-w-6xl
+        max-w-7xl
       "
     >
       <div
         className="
           backdrop-blur-xl
-          bg-white/5
-          border
-          border-white/10
-          rounded-2xl
-          px-6
-          py-4
-          flex
-          items-center
-          justify-between
+          bg-white/[0.03]
+          border border-white/10
+          rounded-3xl
+          px-8 py-5
+          flex items-center justify-between
         "
       >
-        <div
-          className="
-            text-green-400
-            font-bold
-            text-2xl
-          "
-        >
+        <div className="font-bold text-3xl text-[#3DDC84]">
           HB
         </div>
 
-        <div
-          className="
-            hidden
-            md:flex
-            gap-8
-            text-slate-300
-          "
-        >
+        <div className="hidden lg:flex gap-10 text-slate-300">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -56,7 +39,7 @@ const Navbar = () => {
         </div>
       </div>
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
