@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from "./components/Navbar"
 import Hero from "./sections/Hero"
 import About from "./sections/About"
+import Skills from "./sections/Skills"
 import MouseSpotlight from "./components/MouseSpotlight"
 
 function App() {
@@ -15,43 +16,49 @@ function App() {
 
   return (
     <>
-      {/* Scroll Progress Bar */}
+      {/* Premium Top Scroll Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-[#3DDC84] origin-left z-[60]"
+        className="fixed top-0 left-0 right-0 h-1 bg-[#3DDC84] origin-left z-[60] shadow-[0_0_10px_#3DDC84]"
         style={{ scaleX }}
       />
       
+      {/* Floating Active Tracking Navigation */}
       <Navbar />
       
-      <main className="bg-[#0b1120] relative z-10">
-        {/* Hero Section */}
+      <main className="bg-[#0b1120] relative z-10 overflow-x-hidden">
+        {/* Modern Interactive Hero Canvas Layout */}
         <Hero />
         
-        {/* About Section */}
+        {/* Overhauled SaaS Design Journey & Milestone Deck */}
         <About />
         
-        {/* Placeholder sections given true standard viewport padding for seamless observer matching */}
-        <section id="skills" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-3xl font-black text-white mb-6 tracking-tight">Skills</h2>
-          <p className="text-slate-400 font-medium">Section workspace content tracker.</p>
-        </section>
-
+        {/* Error-Free Glassmorphism Tech Pillar Dashboard Matrix */}
+        <Skills />
+        
+        {/* Standard Viewport Space Anchors for Navbar Track Optimization */}
         <section id="projects" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-3xl font-black text-white mb-6 tracking-tight">Projects</h2>
-          <p className="text-slate-400 font-medium">Section workspace content tracker.</p>
+          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Projects</h2>
+          <p className="text-slate-400 font-semibold text-lg max-w-xl">
+            Major academic software builds and independent Android application packages workspace tracker.
+          </p>
         </section>
 
         <section id="achievements" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-3xl font-black text-white mb-6 tracking-tight">Achievements</h2>
-          <p className="text-slate-400 font-medium">Section workspace content tracker.</p>
+          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Achievements</h2>
+          <p className="text-slate-400 font-semibold text-lg max-w-xl">
+            Hackathon milestones, open-source technical credentials, and university engineering honors workspace tracker.
+          </p>
         </section>
 
         <section id="contact" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-3xl font-black text-white mb-6 tracking-tight">Contact</h2>
-          <p className="text-slate-400 font-medium">Section workspace content tracker.</p>
+          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Contact</h2>
+          <p className="text-slate-400 font-semibold text-lg max-w-xl">
+            Professional networking conduits, communication links, and direct outreach access points tracker.
+          </p>
         </section>
       </main>
 
+      {/* Dynamic Cursor Spotlight Layer */}
       <MouseSpotlight />
     </>
   )
