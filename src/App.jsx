@@ -18,37 +18,27 @@ function App() {
   });
 
   return (
-    <>
+    <div className="bg-[#0b1120] text-white min-h-screen relative overflow-x-hidden selection:bg-[#3DDC84]/20 selection:text-[#3DDC84]">
       {/* Premium Top Scroll Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-[#3DDC84] origin-left z-[60] shadow-[0_0_10px_#3DDC84]"
         style={{ scaleX }}
       />
       
-      {/* Floating Active Tracking Navigation */}
       <Navbar />
       
-      <main className="bg-[#0b1120] relative z-10 overflow-x-hidden">
-        {/* Modern Interactive Hero Canvas Layout */}
+      <main className="relative z-10">
         <Hero />
-        
-        {/* Overhauled SaaS Design Journey & Milestone Deck */}
         <About />
-        
-        {/* Error-Free Glassmorphism Tech Pillar Dashboard Matrix */}
         <Skills />
-
-        {/* 7-Project Dual Featured + Grid Presentation Module */}
         <Projects />
-        
         <Achievements />
-
         <Contact />
       </main>
 
-      {/* Dynamic Cursor Spotlight Layer */}
+      {/* Modern Interactive Hover Spotlight */}
       <MouseSpotlight />
-    </>
+    </div>
   )
 }
 
