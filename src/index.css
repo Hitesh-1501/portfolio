@@ -22,11 +22,40 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-
   background: var(--bg-primary);
   color: var(--text-primary);
-
   overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3ddc84/50;
+}
+
+/* Animated Gradient Mesh Utilities */
+@keyframes mesh-move {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.15); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-mesh-1 {
+  animation: mesh-move 25s infinite alternate ease-in-out;
+}
+
+.animate-mesh-2 {
+  animation: mesh-move 30s infinite alternate-reverse ease-in-out;
 }
 
 * {

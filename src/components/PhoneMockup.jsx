@@ -1,133 +1,101 @@
-import analytics from "../assets/images/analytics.png"
+import { useState, useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import analytics from "../assets/images/analytics.png";
 import FloatingTech from "./FloatingTech";
 import ProfilePhoto from "./ProfilePhoto";
 import { SiAndroid } from "react-icons/si";
 
 const PhoneMockup = () => {
+  const cardRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Motion values tracking relative layout positions
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  // Smooth springs configuration
+  const springConfig = { stiffness: 150, damping: 20, mass: 0.5 };
+  const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [15, -15]), springConfig);
+  const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-15, 15]), springConfig);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+
+    x.set(mouseX / width);
+    y.set(mouseY / height);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    x.set(0);
+    y.set(0);
+  };
+
   return (
-    <div
-      className="
-      relative
-      w-[260px]
-      lg:w-[300px]
-      mx-auto
-      
-      /* Base tilted position */
-      rotate-[-4deg]
-      
-      /* Smoothly resets to normal upright position on hover */
-      hover:rotate-0
-      hover:scale-[1.03]
-      
-      transition-all
-      duration-500
-      ease-out
-      cursor-pointer
-      z-10
-      "
+    <div 
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-[280px] lg:w-[320px] mx-auto perspective-1000 z-10"
+      style={{ perspective: "1200px" }}
     >
-      {/* Profile Photo Wrapper Container */}
-      <div className="absolute -left-14 top-28 z-30 group/avatar">
-        {/* Step 2: Android Developer Badge above the photo */}
-        <div className="absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0b0f19]/90 border border-[#3DDC84]/40 text-[#3DDC84] text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md pointer-events-none transition-transform duration-300 group-hover/avatar:-translate-y-1">
-          <SiAndroid className="text-xs" />
-          <span>ANDROID DEVELOPER</span>
-        </div>
-        {/* Step 1: Profile Photo embedded inside Phone Area */}
-        <ProfilePhoto />
-      </div>
-
-      {/* Featured Project Card */}
-      <div
-        className="
-        absolute
-        -top-8
-        left-1/2
-        -translate-x-1/2
-        z-20
-
-        backdrop-blur-xl
-        bg-white/[0.04]
-        border
-        border-white/10
-        rounded-2xl
-        w-[250px]
-        p-5
-        text-center
-        "
+      <motion.div
+        style={{
+          rotateX: rotateX,
+          rotateY: rotateY,
+          transformStyle: "preserve-3d"
+        }}
+        animate={{ scale: isHovered ? 1.04 : 1 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="relative w-full h-full transition-shadow duration-500 rounded-[40px]"
       >
-        <p className="text-xs uppercase tracking-widest text-slate-400">
-          FEATURED PROJECT
-        </p>
-        <h3
-          className="
-          text-2xl
-          font-bold
-          mt-2
-          "
+        {/* Embed Static Avatar Overlay Structure */}
+        <div 
+          className="absolute -left-12 top-28 z-50 group/avatar" 
+          style={{ transform: "translateZ(40px)" }}
         >
-          AI Expense Tracker
-        </h3>
+          <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-[#0b0f19]/95 border border-[#3DDC84]/40 text-[#3DDC84] text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md pointer-events-none">
+            <SiAndroid className="text-xs animate-pulse" />
+            <span>ANDROID DEVELOPER</span>
+          </div>
+          <ProfilePhoto />
+        </div>
 
-        <p
-          className="
-          text-sm
-          text-slate-400
-          mt-2
-          "
+        {/* Featured Project Layer Container */}
+        <div
+          className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 backdrop-blur-xl bg-black/60 border border-white/10 rounded-2xl w-[250px] p-4 text-center shadow-2xl"
+          style={{ transform: "translateZ(30px)" }}
         >
-          AI Powered Personal Finance App
-        </p>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-[#3DDC84]">
+            FEATURED PROJECT
+          </p>
+          <h3 className="text-xl font-black text-white mt-1">AI Expense Tracker</h3>
+          <p className="text-xs text-slate-400 mt-1">AI Powered Personal Finance App</p>
+          <p className="text-[11px] font-mono text-cyan-400 mt-2">Gemini AI • Firebase • Compose</p>
+        </div>
 
-        <p
-          className="
-          text-xs
-          text-[#3DDC84]
-          mt-3
-          "
-        >
-          Gemini AI • Firebase • Compose
-        </p>
-      </div>
+        {/* Glow Backdrop */}
+        <div className="absolute inset-0 bg-[#3DDC84]/20 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      {/* Glow Backdrop */}
-      <div
-        className="
-        absolute
-        inset-0
-        bg-[#3DDC84]
-        blur-[150px]
-        opacity-30
-        pointer-events-none
-        "
-      />
+        <FloatingTech />
 
-      <FloatingTech />
-
-      {/* Phone Shell Container */}
-      <div
-          className="
-          relative
-          rounded-[40px]
-          border
-          border-white/10
-          bg-black
-          p-3
-          shadow-[0_40px_120px_rgba(0,0,0,0.6)]
-          "
-        >
-        <img
-          src={analytics}
-          alt="AI Expense Tracker"
-          className="
-          rounded-[30px]
-          w-full
-          "
-        />
-      </div>
-
+        {/* Core Hardware Mock Shell Layout */}
+        <div className="relative rounded-[40px] border border-white/10 bg-black p-3 shadow-[0_30px_80px_rgba(0,0,0,0.8)] border-white/15">
+          <img
+            src={analytics}
+            alt="AI Expense Tracker Dashboard Representation View"
+            className="rounded-[30px] w-full block object-cover"
+          />
+        </div>
+      </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default PhoneMockup
+export default PhoneMockup;
