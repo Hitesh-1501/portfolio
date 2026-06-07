@@ -17,17 +17,25 @@ const Navbar = () => {
     const handleObserver = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          if (entry.target.id === "hero") {
+            // If we are looking at the Hero section, clear the active dot state completely
+            setActiveSection("");
+          } else {
+            // Otherwise, lock seamlessly onto the current section ID
+            setActiveSection(entry.target.id);
+          }
         }
       });
     };
 
     const observer = new IntersectionObserver(handleObserver, {
-      rootMargin: "-35% 0px -45% 0px", // Balances the active toggle zone
-      threshold: 0.15,
+      // Balanced margins to prevent adjacent overlapping sections from overriding each other 
+      rootMargin: "-30% 0px -40% 0px",
+      threshold: 0.1,
     });
 
-    ["about", "skills", "projects", "achievements", "contact"].forEach((id) => {
+    // CRITICAL: We now watch 'hero' alongside your rest of the page targets
+    ["hero", "about", "skills", "projects", "achievements", "contact"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -35,29 +43,58 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setActiveSection(targetId);
+    
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = 95; 
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = targetElement.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <motion.nav
-      // Slowed down entry transition from 0.6s to 1.0s with a luxurious custom cubic-bezier
       initial={{ y: -80, x: "-50%", opacity: 0 }}
       animate={{ y: 0, x: "-50%", opacity: 1 }}
       transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-6 left-1/2 z-50 w-[92%] max-w-5xl"
     >
       <div className="backdrop-blur-xl bg-black/50 border border-white/10 rounded-2xl px-6 py-2.5 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
-        <a href="#" className="font-black text-2xl text-[#3DDC84] tracking-tighter hover:scale-105 transition-transform">
+        <a 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setActiveSection("");
+          }}
+          className="font-black text-2xl text-[#3DDC84] tracking-tighter hover:scale-105 transition-transform select-none"
+        >
           HB
         </a>
 
         <div className="hidden lg:flex gap-1 items-center text-slate-300">
           {navItems.map((item, idx) => {
-            const isActive = activeSection === item.href.substring(1);
+            const currentId = item.href.substring(1);
+            const isActive = activeSection === currentId;
+            
             return (
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, currentId)}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-colors duration-300 ${
+                className={`relative px-4 py-2 rounded-xl text-sm font-semibold transition-colors duration-300 select-none ${
                   isActive ? "text-[#3DDC84]" : "hover:text-white"
                 }`}
               >
@@ -69,12 +106,11 @@ const Navbar = () => {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.3 }} // Smoothed out hover background fade
+                      transition={{ duration: 0.3 }}
                     />
                   )}
                 </AnimatePresence>
 
-                {/* Tuned down the spring speed (stiffness down, damping up) for a rich sliding effect */}
                 {isActive && (
                   <motion.span
                     layoutId="activeNavIndicator"
