@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Hero from "./sections/Hero"
 import About from "./sections/About"
 import Skills from "./sections/Skills"
+import Projects from "./sections/Projects"
 import MouseSpotlight from "./components/MouseSpotlight"
 
 function App() {
@@ -34,15 +35,11 @@ function App() {
         
         {/* Error-Free Glassmorphism Tech Pillar Dashboard Matrix */}
         <Skills />
-        
-        {/* Standard Viewport Space Anchors for Navbar Track Optimization */}
-        <section id="projects" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Projects</h2>
-          <p className="text-slate-400 font-semibold text-lg max-w-xl">
-            Major academic software builds and independent Android application packages workspace tracker.
-          </p>
-        </section>
 
+        {/* 7-Project Dual Featured + Grid Presentation Module */}
+        <Projects />
+        
+        {/* Remaining Spacing Anchors for Navbar Track Optimization */}
         <section id="achievements" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
           <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Achievements</h2>
           <p className="text-slate-400 font-semibold text-lg max-w-xl">
