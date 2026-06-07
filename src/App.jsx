@@ -6,6 +6,7 @@ import About from "./sections/About"
 import Skills from "./sections/Skills"
 import Projects from "./sections/Projects"
 import Achievements from "./sections/Achievements"
+import Contact from "./sections/Contact"
 import MouseSpotlight from "./components/MouseSpotlight"
 
 function App() {
@@ -42,12 +43,7 @@ function App() {
         
         <Achievements />
 
-        <section id="contact" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Contact</h2>
-          <p className="text-slate-400 font-semibold text-lg max-w-xl">
-            Professional networking conduits, communication links, and direct outreach access points tracker.
-          </p>
-        </section>
+        <Contact />
       </main>
 
       {/* Dynamic Cursor Spotlight Layer */}
