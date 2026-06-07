@@ -5,6 +5,7 @@ import Hero from "./sections/Hero"
 import About from "./sections/About"
 import Skills from "./sections/Skills"
 import Projects from "./sections/Projects"
+import Achievements from "./sections/Achievements"
 import MouseSpotlight from "./components/MouseSpotlight"
 
 function App() {
@@ -39,13 +40,7 @@ function App() {
         {/* 7-Project Dual Featured + Grid Presentation Module */}
         <Projects />
         
-        {/* Remaining Spacing Anchors for Navbar Track Optimization */}
-        <section id="achievements" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
-          <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Achievements</h2>
-          <p className="text-slate-400 font-semibold text-lg max-w-xl">
-            Hackathon milestones, open-source technical credentials, and university engineering honors workspace tracker.
-          </p>
-        </section>
+        <Achievements />
 
         <section id="contact" className="min-h-screen py-32 px-6 max-w-7xl mx-auto border-t border-white/5 flex flex-col justify-center">
           <h2 className="text-4xl font-black text-white mb-6 tracking-tight">Contact</h2>
