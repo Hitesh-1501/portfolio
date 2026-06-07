@@ -28,8 +28,7 @@ const ProfilePhoto = () => {
           <img
             src={profile}
             alt="Hitesh Portfolio Display Headshot"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover object-[center_22%] rounded-full contrast-[1.02] brightness-[1.03] image-render-auto will-change-transform transform-gpu backface-hidden"          />
         </div>
       </div>
     </motion.div>
