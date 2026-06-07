@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 
-const FloatingParticles = ({ count = 15 }) => {
+const FloatingParticles = ({ count = 25 }) => {
   const particles = Array.from({ length: count });
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+    <div className="absolute inset-0 pointer-events-none overflow-hidden w-full h-full z-10">
       {particles.map((_, i) => {
-        const size = Math.random() * 4 + 2; // Random sizes between 2px and 6px
-        const startX = Math.random() * 100; // Left offset percentage
-        const startY = Math.random() * 100; // Top offset percentage
-        
+        const size = Math.random() * 5 + 3; // 3px to 8px
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        // Mix matching green accents and soft white stars
+        const isGreen = Math.random() > 0.4;
+        const bgColor = isGreen ? "bg-[#3DDC84]" : "bg-slate-300";
+
         return (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-[#3DDC84]/20"
+            className={`absolute rounded-full opacity-40 mix-blend-screen ${bgColor}`}
             style={{
               width: size,
               height: size,
@@ -21,12 +24,13 @@ const FloatingParticles = ({ count = 15 }) => {
               top: `${startY}%`,
             }}
             animate={{
-              y: [0, Math.random() * -80 - 40, 0],
-              x: [0, Math.random() * 40 - 20, 0],
-              opacity: [0.2, 0.7, 0.2],
+              y: [0, Math.random() * -120 - 60, 0],
+              x: [0, Math.random() * 50 - 25, 0],
+              opacity: [0.1, 0.6, 0.1],
+              scale: [1, 1.3, 1],
             }}
             transition={{
-              duration: Math.random() * 8 + 8, // 8s to 16s
+              duration: Math.random() * 10 + 12, // Smoother, slower drifts
               repeat: Infinity,
               ease: "easeInOut",
             }}
