@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import resumeImg from "../assets/images/hitesh_resume.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -113,7 +114,7 @@ const Contact = () => {
             </motion.a>
 
             <motion.a 
-              href="/hitesh_resume.pdf"
+              href = {resumeImg}
               target="_blank"
               rel="noreferrer"
               whileHover={{ y: -4, scale: 1.02, backgroundColor: "rgba(255,255,255,0.06)", borderColor: "rgba(255,255,255,0.25)" }}
