@@ -84,6 +84,8 @@ const Hero = () => {
                   1800,
                   "Firebase Integrator",
                   1800,
+                  "Kotlin Enthusiast",
+                  1800,
                 ]}
                 wrapper="span"
                 repeat={Infinity}
