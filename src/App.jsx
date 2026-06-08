@@ -19,7 +19,6 @@ function App() {
 
   return (
     <div className="bg-[#0b1120] text-white min-h-screen relative overflow-x-hidden selection:bg-[#3DDC84]/20 selection:text-[#3DDC84]">
-      {/* Premium Top Scroll Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-[#3DDC84] origin-left z-[60] shadow-[0_0_10px_#3DDC84]"
         style={{ scaleX }}
@@ -36,7 +35,6 @@ function App() {
         <Contact />
       </main>
 
-      {/* Modern Interactive Hover Spotlight */}
       <MouseSpotlight />
     </div>
   )

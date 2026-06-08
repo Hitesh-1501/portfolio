@@ -18,10 +18,10 @@ const Navbar = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target.id === "hero") {
-            // If we are looking at the Hero section, clear the active dot state completely
+           
             setActiveSection("");
           } else {
-            // Otherwise, lock seamlessly onto the current section ID
+         
             setActiveSection(entry.target.id);
           }
         }
@@ -29,12 +29,12 @@ const Navbar = () => {
     };
 
     const observer = new IntersectionObserver(handleObserver, {
-      // Balanced margins to prevent adjacent overlapping sections from overriding each other 
+      
       rootMargin: "-30% 0px -40% 0px",
       threshold: 0.1,
     });
 
-    // CRITICAL: We now watch 'hero' alongside your rest of the page targets
+   
     ["hero", "about", "skills", "projects", "achievements", "contact"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);

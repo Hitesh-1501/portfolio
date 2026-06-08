@@ -13,7 +13,7 @@ const AnimatedCounter = ({ target }) => {
 
   useEffect(() => {
     let start = 0;
-    const duration = 2000; // 2 Seconds
+    const duration = 2000; 
     const totalFrames = 60;
     const frameDuration = duration / totalFrames;
     const increment = target / totalFrames;

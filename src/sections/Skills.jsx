@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Android Core",
-    // Handcrafted embedded inline SVG icon
     icon: (
       <svg className="w-5 h-5 text-[#3DDC84]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H13.5M10.5 22.5H13.5M4.5 4.5H19.5M4.5 19.5H19.5M4.5 4.5V19.5M19.5 4.5V19.5" />
@@ -93,11 +92,9 @@ const Skills = () => {
       id="skills" 
       className="min-h-screen py-32 px-6 max-w-7xl mx-auto relative overflow-hidden flex flex-col justify-center border-t border-white/5 bg-[#0b1120]"
     >
-      {/* Dynamic Background Glow Maps */}
       <div className="absolute top-1/2 right-[-10%] w-[500px] h-[500px] bg-cyan-500/[0.02] blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-0 left-[-5%] w-[600px] h-[600px] bg-[#3DDC84]/[0.02] blur-[180px] rounded-full pointer-events-none -z-10" />
 
-      {/* Title Header Stack */}
       <div className="mb-20 max-w-3xl text-left">
         <span className="text-[#3DDC84] uppercase tracking-[0.4em] text-xs font-black block mb-4">
           Skills & Technologies
@@ -113,7 +110,6 @@ const Skills = () => {
         </p>
       </div>
 
-      {/* Glass Grid Matrix Container */}
       <div className="grid md:grid-cols-2 gap-6 w-full items-start">
         {skillCategories.map((category, catIdx) => {
           const getDirectionalOffset = () => {
@@ -167,7 +163,6 @@ const Skills = () => {
                     className="flex items-center justify-between p-3.5 rounded-2xl border border-white/[0.02] bg-white/[0.01] transition-all duration-200 group/item cursor-default"
                   >
                     <div className="flex items-center gap-3">
-                      {/* Inline Indicator Node Dot representing branding color spaces */}
                       <span 
                         className="w-1.5 h-1.5 rounded-full" 
                         style={{ backgroundColor: skill.glowColor ? skill.glowColor.replace('0.25', '1').replace('0.15', '1') : '#fff' }} 

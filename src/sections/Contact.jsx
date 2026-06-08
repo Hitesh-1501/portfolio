@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// High-end animation variants framework
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -34,7 +33,6 @@ const Contact = () => {
   const [toastMessage, setToastMessage] = useState("");
   const [indiaTime, setIndiaTime] = useState("");
 
-  // Live dynamic clock updating specifically for India Standard Time (IST)
   useEffect(() => {
     const updateTime = () => {
       const options = {
@@ -73,11 +71,9 @@ const Contact = () => {
         id="contact" 
         className="min-h-screen py-32 px-6 max-w-7xl mx-auto relative overflow-hidden flex flex-col justify-center border-t border-white/5 bg-[#0b1120]"
       >
-        {/* Ambient Decorative Shading Glows */}
         <div className="absolute top-1/3 right-[-10%] w-[600px] h-[600px] bg-[#3DDC84]/[0.015] blur-[160px] rounded-full pointer-events-none -z-10" />
         <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-cyan-500/[0.015] blur-[160px] rounded-full pointer-events-none -z-10" />
 
-        {/* --- MOUNT CONTAINER WITH STAGGERED CHILDREN --- */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -85,7 +81,6 @@ const Contact = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="w-full flex flex-col"
         >
-          {/* --- SECTION HEADER --- */}
           <motion.div variants={fadeUpVariants} className="mb-14 max-w-3xl text-left">
             <span className="text-[#3DDC84] uppercase tracking-[0.4em] text-xs font-black block mb-4">
               Get In Touch
@@ -101,7 +96,6 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* --- QUICK ACTION BUTTONS BAR --- */}
           <motion.div 
             variants={fadeUpVariants}
             className="flex flex-wrap items-center gap-3 mb-16 pb-8 border-b border-white/[0.04]"
@@ -153,9 +147,7 @@ const Contact = () => {
             </motion.a>
           </motion.div>
 
-          {/* --- MAIN CORE DATA CARDS GRID --- */}
           <div className="grid md:grid-cols-3 gap-6 items-stretch w-full mb-6">
-            {/* Email Card */}
             <motion.div 
               variants={fadeUpVariants}
               onClick={handleCopyEmail}
@@ -177,7 +169,6 @@ const Contact = () => {
               </span>
             </motion.div>
 
-            {/* Location Card */}
             <motion.div 
               variants={fadeUpVariants}
               whileHover={{
@@ -202,7 +193,6 @@ const Contact = () => {
               </span>
             </motion.div>
 
-            {/* Availability Card */}
             <motion.div 
               variants={fadeUpVariants}
               whileHover={{
@@ -230,7 +220,6 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* --- CV RESUME DIRECT DOWNLOAD CARD --- */}
           <motion.div 
             variants={fadeUpVariants}
             whileHover={{ 
@@ -260,7 +249,6 @@ const Contact = () => {
             </a>
           </motion.div>
 
-          {/* --- SOCIAL CONDUITS SECTION --- */}
           <motion.div variants={fadeUpVariants} className="w-full">
             <span className="text-xs font-mono tracking-widest text-slate-500 font-bold uppercase block mb-6">
               🔗 PROFESSIONAL CLOUD CONDUITS
@@ -301,7 +289,7 @@ const Contact = () => {
         </motion.div>
       </section>
 
-      {/* --- LIVE NOTIFICATION TOAST OVERLAY --- */}
+
       <AnimatePresence>
         {toastMessage && (
           <motion.div 
@@ -317,7 +305,6 @@ const Contact = () => {
         )}
       </AnimatePresence>
 
-      {/* --- SITE FOOTER --- */}
       <footer className="w-full bg-[#070b14] border-t border-white/5 py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">

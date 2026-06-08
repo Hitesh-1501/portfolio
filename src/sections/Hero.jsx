@@ -10,7 +10,6 @@ import HeroStats from "../components/HeroStats";
 import PhoneMockup from "../components/PhoneMockup";
 import FloatingParticles from "../components/FloatingParticles";
 
-// CRITICAL FIX: Direct Asset Import to bypass blank browser routing issues!
 import resumeFile from "/hitesh_resume.pdf"; 
 
 const Hero = () => {
@@ -19,7 +18,6 @@ const Hero = () => {
   const triggerDownloadAnimation = () => {
     setDownloadState("downloading");
     
-    // Smooth transition simulation timeline
     setTimeout(() => {
       setDownloadState("success");
       setTimeout(() => {
@@ -31,7 +29,6 @@ const Hero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden flex items-center pt-28 md:pt-36">
       
-      {/* Background canvas elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 bg-[#0b1120]">
         <div className="absolute top-[-15%] left-[-10%] w-[650px] h-[650px] rounded-full bg-[#3DDC84]/10 blur-[130px] animate-mesh-1" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[650px] h-[650px] rounded-full bg-cyan-500/10 blur-[150px] animate-mesh-2" />
@@ -46,7 +43,6 @@ const Hero = () => {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }} // Relaxed, cinematic reveal
           className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-20"
         >
-          {/* Left Bio text cluster */}
           <div className="flex flex-col">
             <motion.p
               initial={{ opacity: 0, x: -15 }}
@@ -102,14 +98,12 @@ const Hero = () => {
               Final-year Computer Science student specializing in building production-ready Android apps with Kotlin, Jetpack Compose, Firebase, and AI-powered workflows.
             </motion.p>
 
-            {/* Resume Call-to-action Action Hub */}
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
               className="flex flex-wrap gap-4 mt-8 items-center"
             >
-              {/* Linked via imported absolute bundle source mapping */}
               <motion.a
                 href={resumeFile}
                 download="Hitesh_Badgujar_Resume.pdf"
@@ -155,7 +149,6 @@ const Hero = () => {
               </a>
             </motion.div>
 
-            {/* Social handles row */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -182,7 +175,6 @@ const Hero = () => {
             <HeroStats />
           </div>
 
-          {/* Right Phone Mockup graphic */}
           <div className="relative flex items-center justify-center lg:mt-0 mt-10">
             <PhoneMockup />
           </div>

@@ -71,7 +71,6 @@ const certifications = [
   }
 ];
 
-// Reusable Framer Motion Variants for Clean Layout Entrance Staggers
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -104,11 +103,9 @@ const Achievements = () => {
       id="achievements" 
       className="min-h-screen py-32 px-6 max-w-7xl mx-auto relative overflow-hidden flex flex-col justify-center border-t border-white/5 bg-[#0b1120]"
     >
-      {/* Background Decorative Lighting Accents */}
       <div className="absolute top-1/3 left-[-10%] w-[500px] h-[500px] bg-amber-500/[0.012] blur-[140px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 right-[-10%] w-[500px] h-[500px] bg-[#3DDC84]/[0.012] blur-[140px] rounded-full pointer-events-none -z-10" />
 
-      {/* --- SECTION 1 — HEADER (Staggered Entrance Animation) --- */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -130,7 +127,6 @@ const Achievements = () => {
         </motion.p>
       </motion.div>
 
-      {/* --- COUNTER STATS ROW (Soft Pop Animation) --- */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -158,14 +154,12 @@ const Achievements = () => {
         ))}
       </motion.div>
 
-      {/* --- SECTION 2 — HACKATHON TIMELINE --- */}
       <div ref={timelineRef} className="mb-24 relative pl-6 md:pl-10 space-y-12 max-w-5xl">
         <div className="flex items-center gap-2 mb-4 -ml-6 md:-ml-10">
           <span className="text-lg">🏆</span>
           <h3 className="text-xl font-black text-white uppercase tracking-wider">Hackathon Journey</h3>
         </div>
 
-        {/* Dynamic Timeline Indicator Track Line */}
         <div className="absolute top-14 bottom-2 left-2.5 md:left-3 w-[2px] bg-white/[0.04] rounded-full overflow-hidden">
           <motion.div 
             style={{ height: timelineHeight }}
@@ -216,7 +210,6 @@ const Achievements = () => {
         ))}
       </div>
 
-      {/* --- SECTION 3 — CERTIFICATIONS CARD GRID (Smooth Ripple Stagger) --- */}
       <div className="mb-24 w-full">
         <div className="flex items-center gap-2 mb-8">
           <span className="text-lg">🎓</span>
@@ -267,7 +260,6 @@ const Achievements = () => {
         </motion.div>
       </div>
 
-      {/* --- SECTION 4 — CODING PROFILES (Side Entrances) --- */}
       <div className="w-full">
         <div className="flex items-center gap-2 mb-8">
           <span className="text-lg">💻</span>
@@ -275,7 +267,6 @@ const Achievements = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6 w-full">
-          {/* LeetCode Profile Box */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -305,7 +296,6 @@ const Achievements = () => {
             </a>
           </motion.div>
 
-          {/* GitHub Profile Box */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

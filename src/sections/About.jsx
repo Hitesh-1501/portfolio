@@ -21,16 +21,16 @@ const focusChips = [
 const About = () => {
   const containerRef = useRef(null);
   
-  // Drives line scaling milestones perfectly across screen entries
+ 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  // Limits the timeline line path growth safely inside content layouts
+  
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.6], ["0%", "100%"]);
 
-  // Staggered Motion Layout Maps
+  
   const fadeUpContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -60,11 +60,11 @@ const About = () => {
       ref={containerRef}
       className="min-h-screen py-32 px-6 max-w-7xl mx-auto relative overflow-hidden flex flex-col justify-center border-t border-white/5 bg-[#0b1120]"
     >
-      {/* Visual Depth Glow Layers */}
+      
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#3DDC84]/[0.02] blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-cyan-500/[0.02] blur-[130px] rounded-full pointer-events-none -z-10" />
 
-      {/* Section 1 — About Header (Slide Up Reveal) */}
+      
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ const About = () => {
         </p>
       </motion.div>
 
-      {/* Main SaaS Card Grid Layout */}
+      
       <motion.div 
         variants={fadeUpContainer}
         initial="hidden"
@@ -95,10 +95,10 @@ const About = () => {
         className="grid lg:grid-cols-12 gap-6 items-start w-full"
       >
         
-        {/* LEFT BLOCK COLUMN LAYER — Journey & Timeline Cards */}
+       
         <div className="lg:col-span-7 grid gap-6 w-full">
           
-          {/* Section 2 — My Journey Card */}
+         
           <motion.div
             variants={fadeInLeft}
             whileHover={{ 
@@ -108,7 +108,7 @@ const About = () => {
             }}
             className="backdrop-blur-md bg-slate-900/40 border border-white/[0.06] rounded-3xl p-6 md:p-8 transition-all duration-400 shadow-2xl relative overflow-hidden group"
           >
-            {/* Subtle card glow overlay accent */}
+          
             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#3DDC84]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <h3 className="text-xl font-extrabold text-white mb-5 tracking-tight flex items-center gap-2">
@@ -129,7 +129,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Section 3 — Timeline Milestones Card */}
+         
           <motion.div
             variants={cardFadeUp}
             whileHover={{ 
@@ -145,7 +145,7 @@ const About = () => {
             </h3>
             
             <div className="relative pl-6 md:pl-10 space-y-10">
-              {/* Premium Scroll-Driven Timeline Gradient Vector Track */}
+              
               <div className="absolute top-2 bottom-2 left-2.5 w-[3px] bg-white/[0.04] rounded-full overflow-hidden">
                 <motion.div 
                   className="w-full bg-gradient-to-b from-[#3DDC84] via-emerald-400 to-cyan-400 origin-top shadow-[0_0_15px_#3DDC84]"
@@ -174,10 +174,10 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT BLOCK COLUMN LAYER — Education, Focus, & Goals */}
+       
         <div className="lg:col-span-5 grid gap-6 w-full">
           
-          {/* Section 4 — Education Card */}
+         
           <motion.div
             variants={fadeInRight}
             whileHover={{ y: -5, borderColor: "rgba(56,189,248,0.3)" }}
@@ -202,7 +202,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Section 5 — Current Focus Card with Floating Micro-chips */}
+          
           <motion.div
             variants={fadeInRight}
             whileHover={{ y: -5, borderColor: "rgba(61,220,132,0.2)" }}
@@ -213,7 +213,7 @@ const About = () => {
               {focusChips.map((chip, index) => (
                 <motion.div
                   key={index}
-                  // Floating Animation Sequence with randomized array node micro-delays
+                 
                   animate={{ y: [0, -5, 0] }}
                   transition={{
                     duration: 3.5,
@@ -236,7 +236,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Section 6 & 7 — Combo Strategy Info Panel Card */}
+          
           <motion.div
             variants={fadeInRight}
             whileHover={{ 

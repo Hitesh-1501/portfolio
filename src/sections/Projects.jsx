@@ -92,7 +92,6 @@ const projectData = [
 const Projects = () => {
   const [filter, setFilter] = useState("all");
 
-  // Fixed filtering array synchronization logic cleanly
   const filteredProjects = projectData.filter(project => {
     if (filter === "all") return true;
     return project.category === filter;
@@ -103,11 +102,9 @@ const Projects = () => {
       id="projects" 
       className="min-h-screen py-32 px-6 max-w-7xl mx-auto relative overflow-hidden flex flex-col justify-center border-t border-white/5 bg-[#0b1120]"
     >
-      {/* Soft Decorative Ambient Lighting */}
       <div className="absolute top-1/4 right-[-10%] w-[600px] h-[600px] bg-[#3DDC84]/[0.015] blur-[160px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-cyan-500/[0.015] blur-[160px] rounded-full pointer-events-none -z-10" />
 
-      {/* Title Header Section */}
       <div className="mb-16 max-w-3xl text-left">
         <span className="text-[#3DDC84] uppercase tracking-[0.4em] text-xs font-black block mb-4">
           My Creations
@@ -123,7 +120,6 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Filter Navigation Tab Bar */}
       <div className="flex flex-wrap gap-2 mb-16 border-b border-white/[0.04] pb-4">
         {[
           { id: "all", label: "All Projects" },
@@ -150,7 +146,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* 👑 DUAL COLUMN FEATURED CARDS (Brought Back & Upgraded) */}
       {filter === "all" && (
         <div className="mb-16 flex flex-col gap-6">
           <span className="text-xs font-mono tracking-widest text-slate-500 font-bold uppercase block">
@@ -241,7 +236,6 @@ const Projects = () => {
         </div>
       )}
 
-      {/* 🚀 SUB-SECTION: GENERAL REPOSITORY CARDS MATRIX WITH INDIVIDUAL DESIGN SPECIFICATIONS */}
       <div className="flex flex-col gap-6">
         {filter === "all" && (
           <span className="text-xs font-mono tracking-widest text-slate-500 font-bold uppercase block">
@@ -253,11 +247,9 @@ const Projects = () => {
           <AnimatePresence mode="popLayout">
             {filteredProjects.filter(p => !p.isFeatured).map((project, index) => {
               
-              // Custom Styles mapped uniquely per classification to look distinct
               const isAIStyle = project.category === "aiml";
               const isUIUXStyle = project.category === "uiux";
 
-              // Color Schemes mapping
               const textAccent = isUIUXStyle ? "text-pink-400" : isAIStyle ? "text-cyan-400" : "text-[#3DDC84]";
               const hoverGlow = isUIUXStyle ? "rgba(244,114,182,0.18)" : isAIStyle ? "rgba(34,211,238,0.18)" : "rgba(61,220,132,0.18)";
               const cardBorder = isUIUXStyle ? "group-hover:border-pink-500/20" : isAIStyle ? "group-hover:border-cyan-500/20" : "group-hover:border-[#3DDC84]/20";
@@ -280,7 +272,6 @@ const Projects = () => {
                   className={`backdrop-blur-md bg-slate-900/30 border border-white/[0.05] rounded-3xl p-6 transition-all duration-300 shadow-2xl relative overflow-hidden flex flex-col justify-between h-full group ${cardBorder}`}
                 >
                   <div>
-                    {/* Header line metadata */}
                     <div className="flex justify-between items-center mb-4">
                       <span className={`text-[9px] font-mono font-black uppercase px-2.5 py-0.5 rounded-md border tracking-wider ${
                         isUIUXStyle ? "bg-pink-500/10 text-pink-400 border-pink-500/15" : isAIStyle ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/15" : "bg-[#3DDC84]/10 text-[#3DDC84] border-[#3DDC84]/15"
@@ -292,7 +283,6 @@ const Projects = () => {
                       </span>
                     </div>
 
-                    {/* Main Title Cluster */}
                     <h4 className={`text-xl font-black text-white tracking-tight mb-0.5 group-hover:${textAccent} transition-colors duration-200`}>
                       {project.title}
                     </h4>
@@ -303,7 +293,6 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    {/* Meta Parameters block */}
                     <div className="grid grid-cols-1 gap-2 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.03] mb-5">
                       {Object.entries(project.metrics).map(([key, val]) => (
                         <div key={key} className="flex items-center justify-between">
@@ -314,7 +303,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Core Tags and Anchors */}
                   <div>
                     <div className="flex flex-wrap gap-1 mb-5">
                       {project.tech.map((t) => (
@@ -324,7 +312,6 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Responsive Anchor Action Conduits */}
                     <div className="flex items-center justify-between pt-3.5 border-t border-white/[0.03]">
                       <a 
                         href={project.github} 

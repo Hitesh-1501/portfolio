@@ -9,11 +9,9 @@ const PhoneMockup = () => {
   const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Motion values tracking relative layout positions
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Smooth springs configuration
   const springConfig = { stiffness: 150, damping: 20, mass: 0.5 };
   const rotateX = useSpring(useTransform(y, [-0.5, 0.5], [15, -15]), springConfig);
   const rotateY = useSpring(useTransform(x, [-0.5, 0.5], [-15, 15]), springConfig);
@@ -55,7 +53,7 @@ const PhoneMockup = () => {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="relative w-full h-full transition-shadow duration-500 rounded-[40px]"
       >
-        {/* Embed Static Avatar Overlay Structure */}
+        
         <div 
           className="absolute -left-12 top-28 z-50 group/avatar" 
           style={{ transform: "translateZ(40px)" }}
@@ -67,7 +65,7 @@ const PhoneMockup = () => {
           <ProfilePhoto />
         </div>
 
-        {/* Featured Project Layer Container */}
+        
         <div
           className="absolute -top-12 left-1/2 -translate-x-1/2 z-30 backdrop-blur-xl bg-black/60 border border-white/10 rounded-2xl w-[250px] p-4 text-center shadow-2xl"
           style={{ transform: "translateZ(30px)" }}
@@ -80,12 +78,12 @@ const PhoneMockup = () => {
           <p className="text-[11px] font-mono text-cyan-400 mt-2">Gemini AI • Firebase • Compose</p>
         </div>
 
-        {/* Glow Backdrop */}
+       
         <div className="absolute inset-0 bg-[#3DDC84]/20 blur-[120px] rounded-full pointer-events-none -z-10" />
 
         <FloatingTech />
 
-        {/* Core Hardware Mock Shell Layout */}
+       
         <div className="relative rounded-[40px] border border-white/10 bg-black p-3 shadow-[0_30px_80px_rgba(0,0,0,0.8)] border-white/15">
           <img
             src={analytics}

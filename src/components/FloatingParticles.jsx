@@ -6,10 +6,10 @@ const FloatingParticles = ({ count = 25 }) => {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden w-full h-full z-10">
       {particles.map((_, i) => {
-        const size = Math.random() * 5 + 3; // 3px to 8px
+        const size = Math.random() * 5 + 3;
         const startX = Math.random() * 100;
         const startY = Math.random() * 100;
-        // Mix matching green accents and soft white stars
+       
         const isGreen = Math.random() > 0.4;
         const bgColor = isGreen ? "bg-[#3DDC84]" : "bg-slate-300";
 
@@ -30,7 +30,7 @@ const FloatingParticles = ({ count = 25 }) => {
               scale: [1, 1.3, 1],
             }}
             transition={{
-              duration: Math.random() * 10 + 12, // Smoother, slower drifts
+              duration: Math.random() * 10 + 12, 
               repeat: Infinity,
               ease: "easeInOut",
             }}
