@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import linkedinLogo from "../assets/images/linkedin.png"; 
+import githubLogo from "../assets/images/github.png";
+import leetcodeLogo from "../assets/images/leetcode.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -254,29 +257,41 @@ const Contact = () => {
               🔗 PROFESSIONAL CLOUD CONDUITS
             </span>
             
-           <div className="grid sm:grid-cols-3 gap-4 w-full">
-                {[
-                  { name: "LinkedIn", desc: "Connect professionally and view my experience.", path: "https://www.linkedin.com/in/hitesh-badgujar-b5b489346/", icon: <svg className="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> },
-                  
-                  // FIX: Replaced your clipped GitHub SVG path with the complete, functional official path data string
-                  { name: "GitHub", desc: "Explore my Android projects and repositories.", path: "https://github.com/Hitesh-1501", icon: <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.061.069-.061 1.003.069 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.19 22 16.424 22 12.017 22 6.484 17.522 2 12 2z" /></svg> },
-                  
-                  { name: "LeetCode", desc: "Follow my problem-solving and DSA journey.", path: "https://leetcode.com/u/hitesh_b1501/", icon: <svg className="w-5 h-5 text-[#FFA116]" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 00-.961.411L7.11 5.826a1.373 1.373 0 00-.41.964c.003.362.145.708.397.961l4.42 4.419a1.373 1.373 0 002.327-.962V9.016s-2.126 0-3.385-.01c-1.26-.01-1.743-.513-1.743-1.144 0-.63.525-1.239 1.785-1.239h6.358c.84 0 1.371.42 1.371 1.239V22.8c0 .82-.531 1.2-1.371 1.2H4.23c-.841 0-1.371-.38-1.371-1.2V9.016c0-.82.53-1.24 1.371-1.24h2.155a1.373 1.373 0 100-2.745H4.23C1.904 5.031 0 6.917 0 9.22v13.56C0 25.083 1.903 27 4.23 27h15.54c2.327 0 4.23-1.917 4.23-4.22V9.22c0-2.303-1.903-4.189-4.23-4.189v-.62c0-.364-.145-.713-.404-.972l-2.918-2.918A1.374 1.374 0 0013.483 0z"/></svg> }
-                ].map((social) => (
-                  <motion.a 
-                    key={social.name}
-                    href={social.path}
-                    target="_blank"
-                    rel="noreferrer"
-                    whileHover={{ 
-                      y: -5, 
-                      scale: 1.025,
-                      borderColor: "rgba(255,255,255,0.12)", 
-                      backgroundColor: "rgba(255,255,255,0.02)",
-                      boxShadow: "0 20px 40px -10px rgba(0,0,0,0.6)"
-                    }}
-                    className="backdrop-blur-md bg-white/[0.01] border border-white/[0.03] rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[135px] group/s shadow-sm"
-                  >
+          <div className="grid sm:grid-cols-3 gap-4 w-full">
+            {[
+              { 
+                name: "LinkedIn", 
+                desc: "Connect professionally and view my experience.", 
+                path: "https://www.linkedin.com/in/hitesh-badgujar-b5b489346/", 
+                icon: <img src={linkedinLogo} alt="LinkedIn" className="w-5 h-5 object-contain" /> 
+              },
+              { 
+                name: "GitHub", 
+                desc: "Explore my Android projects and repositories.", 
+                path: "https://github.com/Hitesh-1501", 
+                icon: <img src={githubLogo} alt="GitHub" className="w-5 h-5 object-contain filter invert" /> // Added "filter invert" in case your GitHub image is black and needs to be white on a dark theme
+              },
+              { 
+                name: "LeetCode", 
+                desc: "Follow my problem-solving and DSA journey.", 
+                path: "https://leetcode.com/u/hitesh_b1501/", 
+                icon: <img src={leetcodeLogo} alt="LeetCode" className="w-5 h-5 object-contain" /> 
+              }
+            ].map((social) => (
+              <motion.a 
+                key={social.name}
+                href={social.path}
+                target="_blank"
+                rel="noreferrer"
+                whileHover={{ 
+                  y: -5, 
+                  scale: 1.025,
+                  borderColor: "rgba(255,255,255,0.12)", 
+                  backgroundColor: "rgba(255,255,255,0.02)",
+                  boxShadow: "0 20px 40px -10px rgba(0,0,0,0.6)"
+                }}
+                className="backdrop-blur-md bg-white/[0.01] border border-white/[0.03] rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between min-h-[135px] group/s shadow-sm"
+              >
                   <div className="flex items-center justify-between w-full">
                     <span className="text-sm font-extrabold text-slate-200 group-hover/s:text-white transition-colors">{social.name}</span>
                     <div className="transition-transform group-hover/s:scale-110 duration-300">{social.icon}</div>
