@@ -16,37 +16,28 @@ const MouseSpotlight = () => {
 
     window.addEventListener("mousemove", move);
 
-    return () =>
-      window.removeEventListener(
-        "mousemove",
-        move
-      );
+    return () => {
+      window.removeEventListener("mousemove", move);
+    };
   }, []);
 
   return (
     <div
-      className="
-      fixed
-      inset-0
-      pointer-events-none
-      z-0
-      "
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: 9999 }}
     >
       <div
-        style={{
-          left: position.x - 150,
-          top: position.y - 150,
-        }}
         className="
-        absolute
-        w-[300px]
-        h-[300px]
-        rounded-full
-
-        bg-[#3DDC84]/10
-
-        blur-[120px]
+          absolute
+          w-[300px]
+          h-[300px]
+          rounded-full
+          bg-[#3DDC84]/5
+          blur-3xl
         "
+        style={{
+          transform: `translate(${position.x - 150}px, ${position.y - 150}px)`,
+        }}
       />
     </div>
   );
