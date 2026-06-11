@@ -14,7 +14,6 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 1024) setMobileOpen(false);
@@ -23,7 +22,6 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };

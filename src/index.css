@@ -23,46 +23,28 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Scroll Performance ───────────────────────────────────────────────────
-   These rules fix laggy scrolling caused by expensive blur/paint operations
-   on every scroll frame.
-   
-   1. `will-change: transform` on the fixed progress bar tells the GPU to
-      promote it to its own compositor layer, so it doesn't trigger repaints.
-   2. `contain: layout style paint` on sections isolates their paint zones —
-      the browser only repaints the visible section, not the whole page.
-   3. `.gpu` utility promotes heavy animated elements (particles, blobs) to
-      their own GPU layer so they don't block the main thread.
-──────────────────────────────────────────────────────────────────────────── */
-
-/* Fixed scroll progress bar — give it its own GPU layer */
 [style*="scaleX"] {
   will-change: transform;
 }
 
-/* Section paint isolation — prevents full-page repaints on scroll */
 section {
   contain: layout style paint;
 }
 
-/* Promote animated blobs/particles to GPU layer to avoid main-thread jank */
 .animate-mesh-1,
 .animate-mesh-2 {
   will-change: transform;
   transform: translateZ(0);
 }
 
-/* Backdrop-blur elements: promote to own layer to stop triggering repaints */
 [class*="backdrop-blur"] {
   transform: translateZ(0);
 }
 
-/* MouseSpotlight: GPU layer so mouse tracking doesn't cause repaints */
 [style*="translate("] {
   will-change: transform;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -77,7 +59,6 @@ section {
   background: #2d3f54;
 }
 
-/* Animated Gradient Mesh Utilities */
 @keyframes mesh-move {
   0%   { transform: translate(0px, 0px) scale(1); }
   33%  { transform: translate(30px, -50px) scale(1.15); }
@@ -93,7 +74,6 @@ section {
   animation: mesh-move 30s infinite alternate-reverse ease-in-out;
 }
 
-/* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .animate-mesh-1,
   .animate-mesh-2 {

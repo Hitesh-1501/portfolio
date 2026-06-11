@@ -1,9 +1,7 @@
 import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 
-// Memoized so it never re-renders on parent state changes (which caused scroll jank)
 const FloatingParticles = memo(({ count = 20 }) => {
-  // Pre-compute particle values once — never recalculate on re-render
   const particles = useMemo(() => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
