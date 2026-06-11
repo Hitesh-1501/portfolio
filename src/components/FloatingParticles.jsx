@@ -1,44 +1,54 @@
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 
-const FloatingParticles = ({ count = 25 }) => {
-  const particles = Array.from({ length: count });
+// Memoized so it never re-renders on parent state changes (which caused scroll jank)
+const FloatingParticles = memo(({ count = 20 }) => {
+  // Pre-compute particle values once — never recalculate on re-render
+  const particles = useMemo(() => {
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      size: Math.random() * 4 + 2,
+      startX: Math.random() * 100,
+      startY: Math.random() * 100,
+      isGreen: Math.random() > 0.4,
+      moveY: Math.random() * -100 - 40,
+      moveX: Math.random() * 40 - 20,
+      duration: Math.random() * 8 + 10,
+    }));
+  }, [count]);
 
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden w-full h-full z-10">
-      {particles.map((_, i) => {
-        const size = Math.random() * 5 + 3;
-        const startX = Math.random() * 100;
-        const startY = Math.random() * 100;
-       
-        const isGreen = Math.random() > 0.4;
-        const bgColor = isGreen ? "bg-[#3DDC84]" : "bg-slate-300";
-
-        return (
-          <motion.div
-            key={i}
-            className={`absolute rounded-full opacity-40 mix-blend-screen ${bgColor}`}
-            style={{
-              width: size,
-              height: size,
-              left: `${startX}%`,
-              top: `${startY}%`,
-            }}
-            animate={{
-              y: [0, Math.random() * -120 - 60, 0],
-              x: [0, Math.random() * 50 - 25, 0],
-              opacity: [0.1, 0.6, 0.1],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 12, 
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        );
-      })}
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          className={`absolute rounded-full opacity-40 mix-blend-screen ${
+            p.isGreen ? "bg-[#3DDC84]" : "bg-slate-300"
+          }`}
+          style={{
+            width: p.size,
+            height: p.size,
+            left: `${p.startX}%`,
+            top: `${p.startY}%`,
+            // GPU-accelerate each particle
+            willChange: "transform, opacity",
+          }}
+          animate={{
+            y: [0, p.moveY, 0],
+            x: [0, p.moveX, 0],
+            opacity: [0.1, 0.5, 0.1],
+          }}
+          transition={{
+            duration: p.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
     </div>
   );
-};
+});
+
+FloatingParticles.displayName = "FloatingParticles";
 
 export default FloatingParticles;
