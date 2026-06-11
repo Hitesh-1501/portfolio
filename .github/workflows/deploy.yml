@@ -41,7 +41,7 @@ jobs:
         env:
           # Replace "portfolio" with your actual GitHub repo name
           # e.g. if repo is github.com/Hitesh-1501/my-portfolio → base = /my-portfolio/
-          VITE_BASE_PATH: /portfolio/
+          VITE_BASE_PATH: /my-portfolio/
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
