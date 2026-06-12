@@ -1,5 +1,6 @@
 # 🚀 Hitesh Badgujar — Android Developer Portfolio
- 
+
+[![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Now-3DDC84?style=for-the-badge)](https://hitesh-1501.github.io/my-portfolio/)
 A modern, animated, and fully responsive personal portfolio website built to showcase my skills, projects, achievements, and journey as an **Android (Kotlin + Jetpack Compose) Developer**.
  
 The site features smooth scroll-based animations, a glassmorphism UI, an interactive 3D phone mockup, floating particle effects, and a mouse-tracking spotlight — all built with **React** and **Framer Motion**.
