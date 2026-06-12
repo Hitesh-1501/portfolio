@@ -10,10 +10,10 @@ The site features smooth scroll-based animations, a glassmorphism UI, an interac
  
 ## 📸 Preview
  
-> *(Replace this section with a screenshot or GIF of your live portfolio)*
  
 ```
-[ Add your portfolio screenshot/GIF here ]
+<img width="800" height="392" alt="portfolio" src="https://github.com/user-attachments/assets/af3bf250-40df-4267-ab89-e94b04e71820" />
+
 ```
  
 ---
