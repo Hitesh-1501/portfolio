@@ -95,35 +95,6 @@ src/
 - AI-powered Android apps (e.g., Gemini AI-based Expense Tracker)
 ---
  
-## ⚙️ Getting Started
- 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn
-### Installation
- 
-```bash
-# Clone the repository
-git clone https://github.com/Hitesh-1501/your-portfolio-repo.git
- 
-# Navigate to the project directory
-cd your-portfolio-repo
- 
-# Install dependencies
-npm install
- 
-# Start the development server
-npm run dev
-```
- 
-### Build for Production
- 
-```bash
-npm run build
-```
- 
----
- 
 ## 📬 Contact
  
 - **Name:** Hitesh Jitendra Badgujar
